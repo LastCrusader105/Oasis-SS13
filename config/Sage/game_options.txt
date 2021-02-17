@@ -85,6 +85,9 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 
 ## GAME MODES ###
 
+#Set the Master (Default) Game Mode.
+MASTER_MODE secret
+
 ## Uncomment to not send a roundstart intercept report. Gamemodes may override this.
 #NO_INTERCEPT_REPORT
 
@@ -219,6 +222,9 @@ MAX_POP INCURSION -1
 
 MIN_POP CLOCKCULT 32
 MAX_POP CLOCKCULT -1
+
+MIN_POP HERESY 20
+MAX_POP HERESY -1
 
 ## The amount of time it takes for the emergency shuttle to be called, from round start.
 SHUTTLE_REFUEL_DELAY 12000
@@ -477,6 +483,7 @@ ROUNDSTART_RACES squid
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
 ROUNDSTART_RACES apid
+ROUNDSTART_RACES oozeling
 #ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES shadow
 ROUNDSTART_RACES plasmaman

@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX	31
+#define SAVEFILE_VERSION_MAX	32
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -49,7 +49,20 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		outline_color = COLOR_BLUE_GRAY
 	if(current_version < 31)
 		auto_fit_viewport = TRUE
-
+	if(current_version < 32)
+		//Okay this is gonna s u c k
+		var/list/legacy_purchases = purchased_gear.Copy()
+		purchased_gear.Cut()
+		equipped_gear.Cut() //Not gonna bother.
+		for(var/l_gear in legacy_purchases)
+			var/n_gear
+			for(var/rg_nam in GLOB.gear_datums) //this is ugly.
+				var/datum/gear/r_gear = GLOB.gear_datums[rg_nam]
+				if(r_gear.display_name == l_gear)
+					n_gear = r_gear.id
+					break
+			if(n_gear)
+				purchased_gear += n_gear
 	return
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
@@ -177,6 +190,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["parallax"]			>> parallax
 	S["ambientocclusion"]	>> ambientocclusion
 	S["auto_fit_viewport"]	>> auto_fit_viewport
+	S["widescreenpref"]	    >> widescreenpref
 	S["pixel_size"]	    	>> pixel_size
 	S["scaling_method"]	    >> scaling_method
 	S["menuoptions"]		>> menuoptions
@@ -211,6 +225,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	parallax		= sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
 	ambientocclusion	= sanitize_integer(ambientocclusion, 0, 1, initial(ambientocclusion))
 	auto_fit_viewport	= sanitize_integer(auto_fit_viewport, 0, 1, initial(auto_fit_viewport))
+	widescreenpref  = sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
 	pixel_size		= sanitize_integer(pixel_size, PIXEL_SCALING_AUTO, PIXEL_SCALING_3X, initial(pixel_size))
 	scaling_method  = sanitize_text(scaling_method, initial(scaling_method))
 	ghost_form		= sanitize_inlist(ghost_form, GLOB.ghost_forms, initial(ghost_form))
@@ -276,6 +291,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["parallax"], parallax)
 	WRITE_FILE(S["ambientocclusion"], ambientocclusion)
 	WRITE_FILE(S["auto_fit_viewport"], auto_fit_viewport)
+	WRITE_FILE(S["widescreenpref"], widescreenpref)
 	WRITE_FILE(S["pixel_size"], pixel_size)
 	WRITE_FILE(S["scaling_method"], scaling_method)
 	WRITE_FILE(S["menuoptions"], menuoptions)
@@ -443,6 +459,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_antenna"]	 = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["insect_type"]	 = sanitize_inlist(features["insect_type"], GLOB.insect_type_list)
+
+	//Validate species forced mutant parts
+	for(var/forced_part in pref_species.forced_features)
+		//Get the forced type
+		var/forced_type = pref_species.forced_features[forced_part]
+		//Apply the forced bodypart.
+		features[forced_part] = forced_type
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs

@@ -2,12 +2,12 @@ name: Compile changelogs
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 * * * *"
+  workflow_dispatch:
 
 jobs:
   CompileCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'Oasis-SS13/Oasis-SS13'
     steps:
       - name: Checkout
         uses: actions/checkout@v1

@@ -2479,6 +2479,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/item/folder/red,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "hh" = (
@@ -2503,9 +2504,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "hv" = (
-/obj/structure/chair/office{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
@@ -2541,6 +2539,15 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/turf/open/floor/plasteel/dark,
+/area/ctf)
+"hS" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/item/paper_bin,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "hV" = (
@@ -4216,7 +4223,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
 /obj/item/crowbar/red,
-/obj/item/crowbar/power,
+/obj/item/powertool/jaws_of_life,
 /obj/item/storage/belt/security/full,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -6981,6 +6988,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/syndicate_mothership/control)
+"qM" = (
+/obj/machinery/power/emitter/ctf{
+	dir = 8
+	},
+/turf/open/floor/circuit,
+/area/ctf)
 "qN" = (
 /obj/structure/mopbucket,
 /obj/item/soap/syndie,
@@ -7363,7 +7376,7 @@
 	},
 /obj/item/stack/rods/fifty,
 /obj/item/stack/cable_coil/white,
-/obj/item/screwdriver/power,
+/obj/item/powertool/hand_drill,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/white{
 	icon_state = "0-2"
@@ -7399,7 +7412,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
 /obj/item/crowbar/red,
-/obj/item/crowbar/power,
+/obj/item/powertool/jaws_of_life,
 /obj/item/storage/belt/security/full,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
@@ -7649,7 +7662,7 @@
 "sa" = (
 /obj/structure/table/wood,
 /obj/item/lighter,
-/obj/item/wirecutters/power,
+/obj/item/powertool/jaws_of_life,
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod)
 "sb" = (
@@ -8237,6 +8250,7 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 8
 	},
+/obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "th" = (
@@ -8945,7 +8959,7 @@
 "uP" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/packageWrap,
-/obj/item/crowbar/power,
+/obj/item/powertool/jaws_of_life,
 /obj/item/wrench,
 /obj/item/hand_labeler,
 /obj/effect/turf_decal/stripes/line{
@@ -10605,6 +10619,7 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 4
 	},
+/obj/item/reagent_containers/food/drinks/britcup,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "yU" = (
@@ -10837,7 +10852,8 @@
 /area/wizard_station)
 "zp" = (
 /obj/structure/closet/crate{
-	icon_state = "crateopen"
+	icon_state = "crateopen";
+	opened = 1
 	},
 /obj/item/clothing/suit/wizrobe/red,
 /obj/item/clothing/head/wizard/red,
@@ -11364,9 +11380,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "AG" = (
-/obj/structure/chair/office{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
@@ -14627,7 +14640,7 @@
 /area/tdome/tdomeobserve)
 "Hz" = (
 /obj/structure/barricade/security/ctf,
-/turf/open/floor/circuit/telecomms,
+/turf/open/floor/circuit,
 /area/ctf)
 "HA" = (
 /obj/structure/sink{
@@ -17084,7 +17097,7 @@
 /obj/machinery/power/emitter/ctf{
 	dir = 4
 	},
-/turf/open/floor/circuit/telecomms,
+/turf/open/floor/circuit,
 /area/ctf)
 "Oj" = (
 /obj/machinery/door/firedoor,
@@ -17363,12 +17376,6 @@
 /obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
-"Qd" = (
-/obj/machinery/power/emitter/ctf{
-	dir = 8
-	},
-/turf/open/floor/circuit/telecomms,
-/area/ctf)
 "Qe" = (
 /turf/open/ai_visible,
 /area/ai_multicam_room)
@@ -17384,7 +17391,6 @@
 /turf/open/floor/wood,
 /area/centcom/holding)
 "Qi" = (
-/obj/structure/chair/office,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -17956,6 +17962,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"TA" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/item/folder/red{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/dark,
+/area/ctf)
 "TB" = (
 /obj/structure/reagent_dispensers/cooking_oil,
 /turf/open/floor/plasteel/cafeteria,
@@ -18073,7 +18091,6 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "Up" = (
-/obj/structure/chair/office,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -18107,6 +18124,15 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"UL" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/item/clipboard,
+/turf/open/floor/plasteel/dark,
+/area/ctf)
 "UM" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -18141,7 +18167,6 @@
 /turf/open/floor/wood,
 /area/centcom/holding)
 "UX" = (
-/obj/structure/chair/office,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -18284,7 +18309,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/evac)
 "Wi" = (
-/turf/open/floor/circuit/telecomms,
+/turf/open/floor/circuit,
 /area/ctf)
 "Wj" = (
 /obj/machinery/light/small{
@@ -18588,6 +18613,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod)
+"Yy" = (
+/turf/open/floor/black,
+/area/start)
 "YE" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -18624,9 +18652,6 @@
 /turf/open/floor/grass,
 /area/centcom/holding)
 "YO" = (
-/obj/structure/chair/office{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
@@ -22525,7 +22550,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 fX
 fX
 fX
@@ -22541,7 +22566,7 @@ fX
 fX
 fX
 fX
-aa
+ab
 aa
 aa
 aa
@@ -22782,23 +22807,23 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+ab
 aa
 aa
 aa
@@ -23039,23 +23064,23 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+ab
 aa
 aa
 aa
@@ -23296,23 +23321,23 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -69060,13 +69085,13 @@ aa
 aa
 aa
 fZ
-Qd
+qM
 gl
 Xu
 Xu
 Xu
 gl
-Qd
+qM
 fZ
 Xu
 Xu
@@ -74213,7 +74238,7 @@ Qn
 Bt
 gh
 Up
-hc
+hS
 hv
 gh
 Qq
@@ -74470,7 +74495,7 @@ Qn
 PB
 gh
 Up
-hc
+TA
 hv
 gh
 ge
@@ -74727,7 +74752,7 @@ Qn
 Tw
 gh
 Up
-hc
+UL
 hv
 gh
 ge
@@ -83215,9 +83240,9 @@ gA
 gR
 gR
 fZ
-Qd
+qM
 hC
-Qd
+qM
 fZ
 aa
 aa
@@ -83987,7 +84012,7 @@ gR
 gR
 fZ
 fZ
-Qd
+qM
 fZ
 aa
 aa
